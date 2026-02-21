@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Блог | Новости и советы о косметике</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        /* blog card hover effect */
+        .blog-card:hover .blog-img {
+            transform: scale(1.03);
+        }
+        .blog-img {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== BLOG PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Блог</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page header -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Блог о красоте</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">Советы экспертов, новинки косметики, секреты ухода и вдохновение</p>
+            </div>
+        </section>
+
+        <!-- Main blog area with grid + sidebar -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <!-- Blog posts grid (left side, 2/3 width) -->
+                    <div class="lg:w-2/3">
+                        <!-- Optional search bar inside blog section -->
+                        <div class="mb-8 flex">
+                            <div class="relative w-full max-w-md">
+                                <input type="text" placeholder="Поиск по статьям..." 
+                                       class="w-full border border-gray-200 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-primary/30">
+                                <button class="absolute right-2 top-2 bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Blog cards grid (2 columns on desktop) -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Post 1 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/kak-vybrat-uvlazhnyayushchiy-krem" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600" alt="Увлажняющий крем" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 12 марта 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 2 345</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/kak-vybrat-uvlazhnyayushchiy-krem" class="hover:text-primary transition">Как выбрать идеальный увлажняющий крем для лица</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Разбираемся в типах кожи, текстурах и составах. Как не ошибиться и найти «тот самый» крем.</p>
+                                    <a href="/blog/kak-vybrat-uvlazhnyayushchiy-krem" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Post 2 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/novye-postupleniya-vesna-2025" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600" alt="Новинки косметики" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 5 марта 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 1 890</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/novye-postupleniya-vesna-2025" class="hover:text-primary transition">Новинки весны 2025: что появилось в нашем каталоге</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Свежие поступления от Chanel, Dior и российских брендов. Успейте оценить первыми!</p>
+                                    <a href="/blog/novye-postupleniya-vesna-2025" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Post 3 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/sekrety-uhoda-za-volosami" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=600" alt="Уход за волосами" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 22 февраля 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 3 210</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/sekrety-uhoda-za-volosami" class="hover:text-primary transition">5 секретов ухода за волосами зимой</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Как спасти волосы от перепадов температур и сухости воздуха в помещении. Рекомендации трихологов.</p>
+                                    <a href="/blog/sekrety-uhoda-za-volosami" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Post 4 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/chto-takoe-retinoidy" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1591991731833-b4807cf7ef94?auto=format&fit=crop&w=600" alt="Ретиноиды" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 10 февраля 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 1 567</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/chto-takoe-retinoidy" class="hover:text-primary transition">Ретиноиды в косметике: польза и меры предосторожности</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Объясняем, как работают ретинол и его производные, кому подходят и как правильно вводить в уход.</p>
+                                    <a href="/blog/chto-takoe-retinoidy" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Post 5 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/obzor-mattovykh-pomad" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=600" alt="Матовые помады" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 28 января 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 2 102</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/obzor-mattovykh-pomad" class="hover:text-primary transition">Топ-5 матовых помад, которые не сушат губы</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Тестируем популярные стойкие помады: удобство нанесения, комфорт и стойкость. Наш рейтинг.</p>
+                                    <a href="/blog/obzor-mattovykh-pomad" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <!-- Post 6 -->
+                            <article class="blog-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <a href="/blog/kak-podobrat-parfyum" class="block overflow-hidden h-48">
+                                    <img src="https://images.unsplash.com/photo-1595425977377-6a1ddffbb028?auto=format&fit=crop&w=600" alt="Парфюм" class="blog-img w-full h-full object-cover">
+                                </a>
+                                <div class="p-5">
+                                    <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> 15 января 2025</span>
+                                        <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                        <span><i class="far fa-eye mr-1"></i> 1 876</span>
+                                    </div>
+                                    <h2 class="text-xl font-bold font-heading mb-2">
+                                        <a href="/blog/kak-podobrat-parfyum" class="hover:text-primary transition">Как выбрать парфюм, который подчеркнет ваш стиль</a>
+                                    </h2>
+                                    <p class="text-gray-600 text-sm mb-4">Советы парфюмерного эксперта: семейства ароматов, стойкость, как тестировать и не ошибиться.</p>
+                                    <a href="/blog/kak-podobrat-parfyum" class="inline-flex items-center text-primary font-medium text-sm hover:underline">
+                                        Читать далее <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="flex justify-center mt-12">
+                            <nav class="flex items-center gap-1">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white">1</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">2</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">3</a>
+                                <span class="w-10 h-10 flex items-center justify-center">...</span>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">8</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-right"></i></a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar (right column, 1/3 width) -->
+                    <aside class="lg:w-1/3">
+                        <div class="sticky top-28 space-y-8">
+                            <!-- Categories widget -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                                <h3 class="text-xl font-bold font-heading mb-4">Рубрики</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="/blog/category/sovety" class="flex justify-between items-center text-gray-700 hover:text-primary transition"><span>Советы по уходу</span> <span class="text-xs bg-primary/10 px-2 py-1 rounded-full">14</span></a></li>
+                                    <li><a href="/blog/category/novosti" class="flex justify-between items-center text-gray-700 hover:text-primary transition"><span>Новости магазина</span> <span class="text-xs bg-primary/10 px-2 py-1 rounded-full">7</span></a></li>
+                                    <li><a href="/blog/category/obzory" class="flex justify-between items-center text-gray-700 hover:text-primary transition"><span>Обзоры продуктов</span> <span class="text-xs bg-primary/10 px-2 py-1 rounded-full">11</span></a></li>
+                                    <li><a href="/blog/category/makiyazh" class="flex justify-between items-center text-gray-700 hover:text-primary transition"><span>Макияж</span> <span class="text-xs bg-primary/10 px-2 py-1 rounded-full">9</span></a></li>
+                                    <li><a href="/blog/category/parfyumeriya" class="flex justify-between items-center text-gray-700 hover:text-primary transition"><span>Парфюмерия</span> <span class="text-xs bg-primary/10 px-2 py-1 rounded-full">6</span></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Popular posts widget -->
+                            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                                <h3 class="text-xl font-bold font-heading mb-4">Популярное</h3>
+                                <div class="space-y-4">
+                                    <a href="/blog/kak-vybrat-uvlazhnyayushchiy-krem" class="flex gap-3 group">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=100" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-sm group-hover:text-primary transition">Как выбрать увлажняющий крем</h4>
+                                            <span class="text-xs text-gray-500">12 марта 2025</span>
+                                        </div>
+                                    </a>
+                                    <a href="/blog/sekrety-uhoda-za-volosami" class="flex gap-3 group">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=100" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-sm group-hover:text-primary transition">5 секретов ухода за волосами</h4>
+                                            <span class="text-xs text-gray-500">22 февраля 2025</span>
+                                        </div>
+                                    </a>
+                                    <a href="/blog/obzor-mattovykh-pomad" class="flex gap-3 group">
+                                        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=100" class="w-full h-full object-cover">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-sm group-hover:text-primary transition">Топ-5 матовых помад</h4>
+                                            <span class="text-xs text-gray-500">28 января 2025</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Newsletter widget (small) -->
+                            <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-xl">
+                                <h3 class="text-xl font-bold font-heading mb-2">Полезные советы на почту</h3>
+                                <p class="text-sm text-gray-700 mb-4">Подпишитесь, чтобы получать новые статьи и уведомления об акциях</p>
+                                <form class="flex flex-col gap-2">
+                                    <input disabled type="email" placeholder="Ваш email" class="px-4 py-2 rounded-lg border border-white focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <button disabled class="bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition">Подписаться</button>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        (function() {
+            // placeholder for any future blog interactivity
+            console.log('Blog page loaded – components would be injected dynamically');
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Каталог косметики | Интернет магазин в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        /* custom scroll for filter sidebar */
+        .filter-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .filter-scroll::-webkit-scrollbar-thumb {
+            background: #e11d8c20;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== CATALOG PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Каталог</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page title + stats -->
+        <section class="py-8 bg-white">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-2">Каталог косметики</h1>
+                <p class="text-gray-600">Более 1500 товаров: уход, макияж, парфюмерия и всё для красоты</p>
+            </div>
+        </section>
+
+        <!-- Main catalog area with sidebar and grid -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- FILTER SIDEBAR -->
+                    <aside class="lg:w-1/4 xl:w-1/5">
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto filter-scroll">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="font-bold text-lg">Фильтры</h2>
+                                <button class="text-sm text-primary hover:underline">Сбросить</button>
+                            </div>
+
+                            <!-- Категории -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-tags text-primary mr-2 text-sm"></i> Категории</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li><a href="/catalog/face" class="flex justify-between hover:text-primary transition"><span>Уход за лицом</span> <span class="text-gray-400">(243)</span></a></li>
+                                    <li><a href="/catalog/makeup" class="flex justify-between hover:text-primary transition"><span>Макияж</span> <span class="text-gray-400">(312)</span></a></li>
+                                    <li><a href="/catalog/hair" class="flex justify-between hover:text-primary transition"><span>Уход за волосами</span> <span class="text-gray-400">(176)</span></a></li>
+                                    <li><a href="/catalog/perfume" class="flex justify-between hover:text-primary transition"><span>Парфюмерия</span> <span class="text-gray-400">(98)</span></a></li>
+                                    <li><a href="/catalog/body" class="flex justify-between hover:text-primary transition"><span>Уход за телом</span> <span class="text-gray-400">(142)</span></a></li>
+                                    <li><a href="/catalog/men" class="flex justify-between hover:text-primary transition"><span>Для мужчин</span> <span class="text-gray-400">(64)</span></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Цена -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-ruble-sign text-primary mr-2 text-sm"></i> Цена</h3>
+                                <div class="flex gap-2 items-center">
+                                    <input type="number" placeholder="от" class="w-1/2 px-3 py-2 border border-gray-200 rounded-lg text-sm">
+                                    <span>—</span>
+                                    <input type="number" placeholder="до" class="w-1/2 px-3 py-2 border border-gray-200 rounded-lg text-sm">
+                                </div>
+                                <button class="w-full mt-2 bg-primary/10 text-primary py-2 rounded-lg text-sm hover:bg-primary/20 transition">Применить</button>
+                            </div>
+
+                            <!-- Бренды -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-copyright text-primary mr-2 text-sm"></i> Бренды</h3>
+                                <div class="space-y-2 max-h-40 overflow-y-auto pr-1 text-sm">
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Chanel (34)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Dior (28)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>L'Oreal (67)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Maybelline (52)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Estée Lauder (19)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Nivea (41)</span></label>
+                                    <label class="flex items-center"><input type="checkbox" class="rounded text-primary mr-2"> <span>Garnier (36)</span></label>
+                                </div>
+                            </div>
+
+                            <!-- Наличие -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2">Наличие</h3>
+                                <label class="flex items-center text-sm"><input type="radio" name="stock" class="mr-2 text-primary"> В наличии</label>
+                                <label class="flex items-center text-sm"><input type="radio" name="stock" class="mr-2 text-primary"> Под заказ</label>
+                            </div>
+
+                            <!-- Рейтинг -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-2">Рейтинг</h3>
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> и выше
+                                </div>
+                            </div>
+
+                            <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition text-sm">Применить фильтры</button>
+                        </div>
+                    </aside>
+
+                    <!-- PRODUCT GRID + SORTING -->
+                    <div class="lg:w-3/4 xl:w-4/5">
+                        <!-- Top bar with sort and view options -->
+                        <div class="flex flex-wrap justify-between items-center mb-6">
+                            <p class="text-gray-500 text-sm">Найдено <span class="font-bold text-dark">1567</span> товаров</p>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-500 hidden sm:inline">Сортировка:</span>
+                                <select class="border border-gray-200 rounded-lg px-4 py-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+                                    <option>по популярности</option>
+                                    <option>по цене (сначала дешёвые)</option>
+                                    <option>по цене (сначала дорогие)</option>
+                                    <option>по новизне</option>
+                                    <option>по рейтингу</option>
+                                </select>
+                                <div class="hidden md:flex border border-gray-200 rounded-lg overflow-hidden">
+                                    <button class="px-3 py-2 bg-primary/10 text-primary"><i class="fas fa-th-large"></i></button>
+                                    <button class="px-3 py-2 text-gray-400 hover:bg-gray-100"><i class="fas fa-list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Products grid (4 columns on desktop) -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                            <!-- Product card 1 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500" alt="Крем для лица" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                    <span class="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">-15%</span>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">L'Oreal</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Увлажняющий крем для лица 50мл</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <div>
+                                            <span class="font-bold text-lg">2 490 ₽</span>
+                                            <span class="text-gray-400 text-xs line-through ml-2">2 990 ₽</span>
+                                        </div>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 2 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=500" alt="Помада" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                    <span class="absolute top-2 left-2 bg-accent text-white text-xs px-2 py-1 rounded">New</span>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">Maybelline</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Жидкая матовая помада Superstay</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">1 190 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 3 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1595425977377-6a1ddffbb028?auto=format&fit=crop&w=500" alt="Духи" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">Chanel</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Chanel Coco Mademoiselle 100ml</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">9 990 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 4 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=500" alt="Маска для волос" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">L'Oreal</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Маска для волос Elseve 300мл</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">890 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 5 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500" alt="Тональный крем" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">Dior</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Diorskin Forever тональный крем</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">4 390 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 6 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1611930022073-338e644f0d6e?auto=format&fit=crop&w=500" alt="Скраб для тела" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">The Body Shop</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Скраб для тела с кофе 200мл</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">1 890 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 7 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500" alt="Сыворотка" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">Estée Lauder</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Advanced Night Repair сыворотка</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">7 990 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product card 8 -->
+                            <div class="product-card bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                                <div class="relative">
+                                    <img src="https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?auto=format&fit=crop&w=500" alt="Гель для душа" class="w-full h-56 object-cover">
+                                    <div class="absolute top-2 right-2">
+                                        <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <span class="text-gray-500 text-xs">Nivea</span>
+                                    <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Гель для душа с алоэ вера 250мл</h3>
+                                    <div class="flex text-yellow-400 text-xs my-2">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="font-bold text-lg">390 ₽</span>
+                                        <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="flex justify-center mt-12">
+                            <nav class="flex items-center gap-1">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white">1</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">2</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">3</a>
+                                <span class="w-10 h-10 flex items-center justify-center">...</span>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">12</a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-right"></i></a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently viewed / доп. блок (опционально) -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold font-heading mb-6">Вы недавно смотрели</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Крем для лица</a>
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Помада Maybelline</a>
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Шампунь</a>
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Духи Dior</a>
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Сыворотка</a>
+                    <a href="#" class="bg-white p-3 rounded-lg text-center text-sm hover:shadow transition">Гель для душа</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        (function() {
+            // small script to make filter toggles functional (just ui)
+            const filterSidebar = document.querySelector('.lg\\:w-1\\/4');
+            if (filterSidebar) {
+                // you can add any interactivity if needed
+            }
+        })();
+    </script>
+</body>
+</html>

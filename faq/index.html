@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Часто задаваемые вопросы | Помощь покупателям</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .faq-category-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .faq-category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #e11d8c;
+        }
+        .faq-question {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .faq-question:hover {
+            background-color: #fdf2f8;
+        }
+        .faq-answer {
+            display: none; /* hidden by default, could be toggled with JS, but we keep static */
+        }
+        /* For static display we show answers, but we can also keep them visible */
+        .faq-answer-static {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== FAQ PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Частые вопросы</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page header -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Часто задаваемые вопросы</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Здесь вы найдете ответы на самые популярные вопросы о доставке, оплате, товарах и работе нашего магазина.</p>
+            </div>
+        </section>
+
+        <!-- Search bar for FAQ -->
+        <div class="container mx-auto px-4 -mt-4 mb-10">
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="text" placeholder="Поиск по вопросам..." class="w-full border border-gray-200 rounded-full py-4 pl-6 pr-14 focus:outline-none focus:ring-2 focus:ring-primary/30 shadow-sm">
+                    <button class="absolute right-3 top-3 bg-primary text-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-md hover:bg-primary/90 transition">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-400 mt-2">Например: "доставка", "возврат", "скидки"</p>
+            </div>
+        </div>
+
+        <!-- FAQ categories and questions -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-12 gap-8">
+                    <!-- Sidebar navigation (categories) -->
+                    <div class="md:col-span-3">
+                        <div class="sticky top-28 bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <h3 class="font-bold text-lg mb-4">Категории</h3>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="#delivery" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-truck mr-2 text-primary/70"></i> Доставка</a></li>
+                                <li><a href="#payment" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-credit-card mr-2 text-primary/70"></i> Оплата</a></li>
+                                <li><a href="#warranty" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-shield-alt mr-2 text-primary/70"></i> Гарантия и возврат</a></li>
+                                <li><a href="#products" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-box-open mr-2 text-primary/70"></i> Товары и наличие</a></li>
+                                <li><a href="#wholesale" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-building mr-2 text-primary/70"></i> Оптовым клиентам</a></li>
+                                <li><a href="#account" class="text-gray-700 hover:text-primary transition flex items-center"><i class="fas fa-user-circle mr-2 text-primary/70"></i> Личный кабинет</a></li>
+                            </ul>
+                            <hr class="my-4 border-gray-200">
+                            <p class="text-sm text-gray-500">Не нашли ответ? <br> <a href="/contact" class="text-primary font-medium hover:underline">Свяжитесь с нами</a></p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ content column -->
+                    <div class="md:col-span-9 space-y-10">
+                        <!-- Доставка -->
+                        <div id="delivery" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-truck text-primary mr-3"></i> Доставка</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Какие способы доставки вы предлагаете?</h3>
+                                    <p class="text-gray-600">Мы доставляем заказы по Грозному курьером (в течение 2 часов) и по всей России через транспортные компании: СДЭК, Почта России, Boxberry. Для оптовых клиентов возможна доставка нашим транспортом.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Сколько стоит доставка?</h3>
+                                    <p class="text-gray-600">По Грозному доставка бесплатная при заказе от 1500₽, иначе 200₽. В регионы России стоимость рассчитывается автоматически при оформлении заказа, либо мы свяжемся с вами для уточнения. Для оптовых клиентов действуют индивидуальные условия.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Как быстро придет заказ в другой город?</h3>
+                                    <p class="text-gray-600">Сроки зависят от удаленности: обычно от 2 до 7 рабочих дней. После отправки мы пришлем трек-номер для отслеживания.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Можно ли забрать заказ самостоятельно?</h3>
+                                    <p class="text-gray-600">Да, вы можете забрать заказ бесплатно из нашего магазина по адресу: г. Грозный, ул. Лорсанова, 1Б/1 (РТЦ Беркат). Режим работы: ежедневно 9:00–21:00.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Оплата -->
+                        <div id="payment" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-credit-card text-primary mr-3"></i> Оплата</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Какие способы оплаты доступны?</h3>
+                                    <p class="text-gray-600">Вы можете оплатить заказ наличными или картой при получении (в Грозном), а также онлайн на сайте: банковские карты, Apple Pay, Google Pay, СБП. Для юридических лиц доступен безналичный расчет.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Нужно ли платить за доставку при онлайн-оплате?</h3>
+                                    <p class="text-gray-600">Доставка оплачивается отдельно, если сумма заказа меньше бесплатного порога. Стоимость доставки включается в итоговую сумму заказа.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Предоставляете ли вы отсрочку или рассрочку?</h3>
+                                    <p class="text-gray-600">Для розничных покупателей мы не предоставляем рассрочку. Для оптовых клиентов возможна отсрочка платежа при долгосрочном сотрудничестве (обсуждается индивидуально).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Гарантия и возврат -->
+                        <div id="warranty" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-shield-alt text-primary mr-3"></i> Гарантия и возврат</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Как вернуть товар, если он не подошел?</h3>
+                                    <p class="text-gray-600">Вы можете вернуть товар надлежащего качества в течение 14 дней с момента покупки (кроме косметики, если она не была в употреблении и сохранена упаковка). Для возврата обратитесь к нам по телефону или в магазин.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Что делать, если обнаружен брак?</h3>
+                                    <p class="text-gray-600">Если товар оказался с производственным дефектом, мы заменим его за наш счет или вернем деньги. Пожалуйста, свяжитесь с нами сразу после обнаружения.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Гарантия на продукцию?</h3>
+                                    <p class="text-gray-600">Мы гарантируем 100% оригинальность всех товаров. Сроки годности указаны на упаковке. Если у вас возникли сомнения, наши консультанты всегда помогут.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Товары и наличие -->
+                        <div id="products" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-box-open text-primary mr-3"></i> Товары и наличие</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Как узнать, есть ли товар в наличии?</h3>
+                                    <p class="text-gray-600">На сайте напротив каждого товара отображается статус "В наличии" или "Под заказ". Если товара нет в наличии, вы можете оставить заявку, и мы сообщим о поступлении.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Вы привозите товар под заказ?</h3>
+                                    <p class="text-gray-600">Да, если нужного бренда или позиции нет в наличии, мы можем привезти под заказ. Сроки уточняйте у менеджеров.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Как отличить оригинал от подделки?</h3>
+                                    <p class="text-gray-600">Мы закупаем продукцию только у официальных дистрибьюторов. Все товары имеют сертификаты и голограммы (где предусмотрено). Приходите в магазин и убедитесь сами!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Оптовым клиентам -->
+                        <div id="wholesale" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-building text-primary mr-3"></i> Оптовым клиентам</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Какие условия для оптовых покупателей?</h3>
+                                    <p class="text-gray-600">Мы предлагаем гибкую систему скидок в зависимости от объема заказа. Для постоянных оптовых клиентов – персональные условия и отсрочка платежа. Свяжитесь с нами для получения прайс-листа.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Как начать сотрудничать оптом?</h3>
+                                    <p class="text-gray-600">Напишите нам на <a href="mailto:opt@zaracosmet.ru" class="text-primary hover:underline">opt@zaracosmet.ru</a> или позвоните по номеру +7 (928) 953‒38‒33. Мы обсудим ассортимент и отправим коммерческое предложение.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Личный кабинет -->
+                        <div id="account" class="scroll-mt-28">
+                            <h2 class="faq-category-title text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-user-circle text-primary mr-3"></i> Личный кабинет</h2>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Зачем регистрироваться на сайте?</h3>
+                                    <p class="text-gray-600">В личном кабинете вы можете отслеживать статус заказов, сохранять историю покупок, добавлять товары в избранное и быстрее оформлять заказы.</p>
+                                </div>
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                    <h3 class="font-semibold text-lg mb-2">Что делать, если забыл пароль?</h3>
+                                    <p class="text-gray-600">На странице входа нажмите "Забыли пароль?" и укажите email, привязанный к аккаунту. Мы вышлем ссылку для сброса.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Still have questions -->
+                        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-2xl text-center">
+                            <h3 class="text-2xl font-bold font-heading mb-3">Остались вопросы?</h3>
+                            <p class="text-gray-700 mb-5">Напишите нам в удобный мессенджер или позвоните — мы ответим в течение нескольких минут.</p>
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <a href="tel:+79284793889" class="inline-flex items-center bg-white text-gray-800 px-5 py-3 rounded-full shadow-sm hover:shadow-md transition"><i class="fas fa-phone-alt text-primary mr-2"></i> +7 (928) 479-38-89</a>
+                                <a href="https://wa.me/79284793889" class="inline-flex items-center bg-white text-gray-800 px-5 py-3 rounded-full shadow-sm hover:shadow-md transition"><i class="fab fa-whatsapp text-green-600 mr-2"></i> WhatsApp</a>
+                                <a href="https://t.me/zaracosmet" class="inline-flex items-center bg-white text-gray-800 px-5 py-3 rounded-full shadow-sm hover:shadow-md transition"><i class="fab fa-telegram text-blue-500 mr-2"></i> Telegram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        (function() {
+            // Simple FAQ search simulation (just for demo)
+            const searchInput = document.querySelector('input[placeholder*="Поиск"]');
+            if (searchInput) {
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        alert('Функция поиска по FAQ будет реализована в ближайшее время.');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

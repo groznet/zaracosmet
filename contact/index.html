@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Контакты | Интернет магазин косметики в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        /* subtle style for contact cards */
+        .contact-icon {
+            transition: all 0.2s ease;
+        }
+        .contact-card:hover .contact-icon {
+            background-color: #e11d8c;
+            color: white;
+        }
+        /* Yandex map iframe responsive */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS (placeholders) ========== -->
+    <!-- Top bar loaded from components/topbar.html -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+
+    <!-- Header loaded from components/header.html -->
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== CONTACT PAGE SPECIFIC CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs (light) -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Контакты</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page title -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Свяжитесь с нами</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">Мы всегда на связи и готовы помочь с выбором, ответить на вопросы или принять ваш заказ.</p>
+            </div>
+        </section>
+
+        <!-- Contact cards: phone, email, address, hours -->
+        <section class="pb-8 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Phone card -->
+                    <div class="contact-card bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center transition hover:shadow-md">
+                        <div class="contact-icon w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 transition">
+                            <i class="fas fa-phone-alt text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Телефоны</h3>
+                        <a href="tel:+79284793889" class="text-gray-700 hover:text-primary transition">+7 (928) 479-38-89</a>
+                        <a href="tel:+79289533833" class="text-gray-700 hover:text-primary transition">+7 (928) 953‒38‒33</a>
+                        <span class="text-sm text-gray-500 mt-2">WhatsApp / Telegram</span>
+                    </div>
+                    <!-- Email card -->
+                    <div class="contact-card bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center transition hover:shadow-md">
+                        <div class="contact-icon w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 transition">
+                            <i class="fas fa-envelope text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Email</h3>
+                        <a href="mailto:info@zaracosmet.ru" class="text-gray-700 hover:text-primary transition break-all">info@zaracosmet.ru</a>
+                        <p class="text-sm text-gray-500 mt-2">Для общих вопросов и оптовых заказов</p>
+                    </div>
+                    <!-- Address card -->
+                    <div class="contact-card bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center transition hover:shadow-md">
+                        <div class="contact-icon w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 transition">
+                            <i class="fas fa-map-pin text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Адрес магазина</h3>
+                        <p class="text-gray-700">г. Грозный, ул. Лорсанова, 1Б/1</p>
+                        <p class="text-sm text-gray-500 mt-1">РТЦ Беркат (возле Автостанции)</p>
+                    </div>
+                    <!-- Hours card -->
+                    <div class="contact-card bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center transition hover:shadow-md">
+                        <div class="contact-icon w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4 transition">
+                            <i class="fas fa-clock text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Режим работы</h3>
+                        <p class="text-gray-700">Ежедневно 9:00 – 21:00</p>
+                        <p class="text-sm text-gray-500 mt-2">Без выходных</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map + Social + Form row -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <!-- Left column: Map & social links -->
+                    <div>
+                        <h2 class="text-2xl font-bold font-heading mb-4">Как нас найти</h2>
+                        <div class="map-container bg-gray-100 rounded-xl overflow-hidden shadow-md mb-6">
+                            <!-- Yandex Maps embed with the exact address (search query) -->
+                            <iframe src="https://yandex.ru/maps/?text=Грозный,+ул.+Лорсанова,+1Б/1&z=17&l=map&pt=45.713697,43.321514" 
+                                    allowfullscreen="true" 
+                                    loading="lazy"
+                                    title="ZARA на карте Грозного"
+                                    style="border:0; width:100%; height:350px;">
+                            </iframe>
+                        </div>
+                        <!-- Alternative link to open map -->
+                        <p class="text-sm text-gray-500 mb-4">
+                            <i class="fas fa-external-link-alt mr-1"></i> 
+                            <a href="https://yandex.ru/maps/?text=Грозный,+ул.+Лорсанова,+1Б/1" target="_blank" class="text-primary hover:underline">
+                                Открыть в Яндекс.Картах
+                            </a>
+                        </p>
+
+                        <!-- Social links block (like in footer/topbar) -->
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h3 class="font-bold text-lg mb-3">Мы в соцсетях</h3>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://www.instagram.com/zara.beauty_shop" target="_blank" class="flex items-center gap-2 text-gray-700 hover:text-pink-600 transition">
+                                    <i class="fab fa-instagram text-2xl"></i> <span>Instagram</span>
+                                </a>
+                                <a href="https://t.me/zaracosmet" target="_blank" class="flex items-center gap-2 text-gray-700 hover:text-blue-500 transition">
+                                    <i class="fab fa-telegram text-2xl"></i> <span>Telegram</span>
+                                </a>
+                                <a href="https://wa.me/79284793889" target="_blank" class="flex items-center gap-2 text-gray-700 hover:text-green-600 transition">
+                                    <i class="fab fa-whatsapp text-2xl"></i> <span>WhatsApp</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-2 text-gray-700 hover:text-blue-700 transition">
+                                    <i class="fab fa-vk text-2xl"></i> <span>VK</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-2 text-gray-700 hover:text-red-600 transition">
+                                    <i class="fab fa-youtube text-2xl"></i> <span>YouTube</span>
+                                </a>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-4">
+                                <i class="fas fa-hashtag text-primary"></i> Подписывайтесь, чтобы быть в курсе новинок и акций!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right column: Contact form -->
+                    <div>
+                        <h2 class="text-2xl font-bold font-heading mb-4">Напишите нам</h2>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <form id="contactForm" class="space-y-5">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ваше имя <span class="text-primary">*</span></label>
+                                    <input disabled type="text" id="name" name="name" required
+                                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input disabled type="email" id="email" name="email"
+                                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                                           placeholder="для ответа">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Телефон <span class="text-primary">*</span></label>
+                                    <input disabled type="tel" id="phone" name="phone" required
+                                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                                           placeholder="+7 (___) ___-__-__">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Сообщение</label>
+                                    <textarea disabled id="message" name="message" rows="4"
+                                              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                                              placeholder="Ваш вопрос или пожелание..."></textarea>
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    Нажимая «Отправить», вы соглашаетесь с 
+                                    <a href="/privacy" class="text-primary hover:underline">обработкой персональных данных</a>.
+                                </div>
+                                <button disabled type="submit"
+                                        class="w-full bg-primary/50 hover:bg-primary/50 text-white font-medium py-3 px-6 rounded-lg transition shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fas fa-paper-plane"></i> Отправить сообщение
+                                </button>
+                            </form>
+                        </div>
+                        <!-- Additional contact info (wholesale) -->
+                        <div class="mt-6 bg-secondary/5 p-5 rounded-xl border border-secondary/10">
+                            <h3 class="font-bold text-lg flex items-center gap-2"><i class="fas fa-boxes text-secondary"></i> Оптовым клиентам</h3>
+                            <p class="text-gray-700 text-sm mt-1">Специальные условия для салонов красоты и интернет-магазинов. Пишите на <a href="mailto:opt@zaracosmet.ru" class="text-primary font-medium hover:underline">opt@zaracosmet.ru</a> или звоните +7 (928) 953‒38‒33</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Small CTA: визит в магазин -->
+        <section class="py-10 bg-gradient-to-r from-primary/5 to-secondary/5">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-2xl font-bold font-heading mb-3">Приходите за покупками</h3>
+                <p class="text-gray-700 mb-4">ул. Лорсанова, 1Б/1, Грозный — доброжелательные консультанты помогут выбрать идеальное средство.</p>
+                <a href="/catalog" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition shadow">Перейти в каталог</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== LOADED COMPONENTS (footer) ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <!-- Simple form handling (prevent default, show alert) -->
+    <script>
+        (function() {
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // You can add AJAX or just a friendly message
+                    alert('Спасибо! Ваше сообщение отправлено (демо-режим). В ближайшее время мы свяжемся с вами.');
+                    form.reset();
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

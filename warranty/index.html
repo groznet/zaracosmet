@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Гарантия и возврат | Условия обмена и возврата косметики</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== WARRANTY & RETURNS PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Гарантия и возврат</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page header -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Гарантия и возврат</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Мы уверены в качестве нашей продукции и хотим, чтобы вы совершали покупки с полным спокойствием.</p>
+            </div>
+        </section>
+
+        <!-- Intro / Guarantee statement -->
+        <section class="pb-8 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="bg-primary/5 p-8 rounded-2xl border border-primary/10">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-primary text-4xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold font-heading mb-2">100% оригинальная косметика</h2>
+                            <p class="text-gray-700">Все товары в нашем магазине сертифицированы и поставляются напрямую от официальных дистрибьюторов. Если вы обнаружите подделку — вернём деньги в двойном размере.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two columns: Warranty and Returns -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Гарантия -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><i class="fas fa-medal text-primary"></i></span>
+                            <h2 class="text-2xl font-bold font-heading">Гарантия</h2>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>На все товары распространяется гарантия производителя от заводских дефектов.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Гарантийный срок — от 30 дней до 6 месяцев в зависимости от бренда (указан на упаковке или в сертификате).</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>При обнаружении брака или недостатков мы заменим товар за свой счёт или вернём деньги.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Гарантия не распространяется на повреждения, возникшие после покупки (механические, термические и т.п.).</span></li>
+                        </ul>
+                        <div class="mt-5 bg-white p-4 rounded-lg">
+                            <p class="text-sm text-gray-600"><i class="fas fa-info-circle text-primary mr-2"></i> Для предъявления претензии сохраняйте товарный или кассовый чек.</p>
+                        </div>
+                    </div>
+
+                    <!-- Возврат -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><i class="fas fa-rotate-left text-primary"></i></span>
+                            <h2 class="text-2xl font-bold font-heading">Возврат</h2>
+                        </div>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Вы можете вернуть товар надлежащего качества в течение 14 дней, если он не был в употреблении, сохранены упаковка, пломбы и товарный вид.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Для возврата необходимо иметь документ, подтверждающий покупку (чек или электронный чек).</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Возврат денег осуществляется в течение 5–10 рабочих дней после получения товара.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-primary mt-1 mr-3"></i> <span>Если товар оказался бракованным, мы компенсируем стоимость доставки при возврате.</span></li>
+                        </ul>
+                        <div class="mt-5 bg-white p-4 rounded-lg">
+                            <p class="text-sm text-gray-600"><i class="fas fa-exclamation-triangle text-primary mr-2"></i> Обратите внимание: парфюмерно-косметическая продукция надлежащего качества не подлежит возврату по закону (Постановление Правительства РФ № 2463). Однако мы всегда идём навстречу клиентам и в исключительных случаях можем согласовать возврат — свяжитесь с нами.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step-by-step return procedure -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold font-heading mb-8 text-center">Как вернуть товар</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="bg-gray-50 p-5 rounded-xl text-center relative">
+                        <span class="absolute -top-3 -left-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
+                        <i class="fas fa-phone-alt text-primary text-3xl mb-3 mt-2"></i>
+                        <h3 class="font-bold text-lg mb-2">Свяжитесь с нами</h3>
+                        <p class="text-gray-500 text-sm">Позвоните или напишите в WhatsApp/Telegram, сообщите номер заказа и причину возврата.</p>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-xl text-center relative">
+                        <span class="absolute -top-3 -left-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</span>
+                        <i class="fas fa-box-open text-primary text-3xl mb-3 mt-2"></i>
+                        <h3 class="font-bold text-lg mb-2">Подготовьте товар</h3>
+                        <p class="text-gray-500 text-sm">Упакуйте товар в оригинальную упаковку, приложите чек и заполненное заявление (мы отправим бланк).</p>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-xl text-center relative">
+                        <span class="absolute -top-3 -left-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</span>
+                        <i class="fas fa-truck text-primary text-3xl mb-3 mt-2"></i>
+                        <h3 class="font-bold text-lg mb-2">Передайте возврат</h3>
+                        <p class="text-gray-500 text-sm">Привезите товар в наш магазин или отправьте транспортной компанией (по договорённости).</p>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-xl text-center relative">
+                        <span class="absolute -top-3 -left-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</span>
+                        <i class="fas fa-money-bill-wave text-primary text-3xl mb-3 mt-2"></i>
+                        <h3 class="font-bold text-lg mb-2">Получите деньги</h3>
+                        <p class="text-gray-500 text-sm">После проверки мы вернём средства тем же способом, которым была произведена оплата.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exceptions & conditions (list) -->
+        <section class="py-10 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl font-bold font-heading mb-5 flex items-center"><i class="fas fa-ban text-primary mr-3"></i> Товары, которые не подлежат возврату</h2>
+                    <ul class="bg-white p-6 rounded-xl border border-gray-200 space-y-2 text-gray-700">
+                        <li><i class="fas fa-circle text-primary text-xs mr-3 align-middle"></i> Парфюмерно-косметические товары надлежащего качества (согласно законодательству РФ).</li>
+                        <li><i class="fas fa-circle text-primary text-xs mr-3 align-middle"></i> Средства личной гигиены (зубные щётки, мочалки и пр.)</li>
+                        <li><i class="fas fa-circle text-primary text-xs mr-3 align-middle"></i> Товары с истёкшим сроком годности (по вине покупателя).</li>
+                        <li><i class="fas fa-circle text-primary text-xs mr-3 align-middle"></i> Косметика с нарушенной упаковкой или следами использования.</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-4">Однако в каждом случае мы готовы рассмотреть возможность обмена или возврата — обратитесь к нам, и мы постараемся найти решение.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts for returns -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold font-heading mb-4">По вопросам возврата обращайтесь</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="tel:+79284793889" class="inline-flex items-center bg-gray-100 px-5 py-3 rounded-full hover:bg-primary/10 transition"><i class="fas fa-phone-alt text-primary mr-2"></i> +7 (928) 479-38-89</a>
+                    <a href="https://wa.me/79284793889" class="inline-flex items-center bg-gray-100 px-5 py-3 rounded-full hover:bg-primary/10 transition"><i class="fab fa-whatsapp text-primary mr-2"></i> WhatsApp</a>
+                    <a href="https://t.me/zaracosmet" class="inline-flex items-center bg-gray-100 px-5 py-3 rounded-full hover:bg-primary/10 transition"><i class="fab fa-telegram text-primary mr-2"></i> Telegram</a>
+                    <a href="mailto:info@zaracosmet.ru" class="inline-flex items-center bg-gray-100 px-5 py-3 rounded-full hover:bg-primary/10 transition"><i class="fas fa-envelope text-primary mr-2"></i> info@zaracosmet.ru</a>
+                </div>
+                <p class="text-gray-500 mt-6">Наш адрес: г. Грозный, ул. Лорсанова, 1Б/1 (РТЦ Беркат). Режим работы: ежедневно 9:00–21:00.</p>
+            </div>
+        </section>
+
+        <!-- Bottom note about consumer rights -->
+        <section class="pb-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="bg-secondary/5 p-5 rounded-lg text-sm text-gray-600 border border-secondary/20">
+                    <i class="fas fa-gavel text-secondary mr-2"></i> Все условия возврата и гарантии соответствуют Закону РФ «О защите прав потребителей» и Постановлению Правительства РФ № 2463 от 31.12.2020. Пожалуйста, сохраняйте чек до окончания гарантийного срока.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

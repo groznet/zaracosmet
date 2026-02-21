@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Доставка и оплата | Интернет магазин косметики в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== DELIVERY & PAYMENT PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Доставка и оплата</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page header -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Доставка и оплата</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Мы стараемся сделать получение заказа максимально удобным. Выберите подходящий способ доставки и оплаты.</p>
+            </div>
+        </section>
+
+        <!-- Delivery options grid -->
+        <section class="pb-8 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold font-heading mb-8 flex items-center"><i class="fas fa-truck text-primary mr-3"></i> Способы доставки</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Курьером по Грозному -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-motorcycle text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Курьером по Грозному</h3>
+                        <p class="text-gray-600 text-sm mb-3">Доставка осуществляется в день заказа или на следующий день. Курьер свяжется с вами за час до приезда.</p>
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-primary mr-2"></i> При заказе от 1500 ₽ — <span class="font-bold">бесплатно</span></li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> До 1500 ₽ — 200 ₽</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Время доставки: 9:00–21:00</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Оплата наличными или картой курьеру</li>
+                        </ul>
+                        <span class="text-xs text-gray-400">Срок: 2–3 часа после подтверждения</span>
+                    </div>
+
+                    <!-- Самовывоз (Pickup) -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-store text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Самовывоз из магазина</h3>
+                        <p class="text-gray-600 text-sm mb-3">Забрать заказ можно в нашем магазине в Грозном. Товар будет отложен и ждать вас.</p>
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-primary mr-2"></i> <span class="font-bold">Бесплатно</span></li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Адрес: ул. Лорсанова, 1Б/1 (РТЦ Беркат)</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Время работы: ежедневно 9:00–21:00</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Оплата при получении или онлайн</li>
+                        </ul>
+                        <span class="text-xs text-gray-400">Срок: через 1 час после оформления</span>
+                    </div>
+
+                    <!-- СДЭК / Почта России -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-truck-fast text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Доставка по России</h3>
+                        <p class="text-gray-600 text-sm mb-3">Отправляем в любой регион через СДЭК, Boxberry, Почту России. Стоимость рассчитывается автоматически при оформлении.</p>
+                        <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                            <li><i class="fas fa-check text-primary mr-2"></i> Отправка в течение 1–2 дней</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Трек-номер для отслеживания</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Страховка посылки включена</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i> Возможна оплата при получении (наложенный платеж)</li>
+                        </ul>
+                        <span class="text-xs text-gray-400">Срок: от 2 до 7 рабочих дней</span>
+                    </div>
+
+                    <!-- Оптовая доставка -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition md:col-span-2 lg:col-span-3 lg:max-w-md mx-auto">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-boxes text-secondary text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Доставка для оптовых клиентов</h3>
+                                <p class="text-sm text-gray-600">Индивидуальные условия, возможна доставка нашим транспортом. Свяжитесь с нами для расчёта.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment methods -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold font-heading mb-8 flex items-center"><i class="fas fa-credit-card text-primary mr-3"></i> Способы оплаты</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Наличные -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-money-bill-wave text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Наличные</h3>
+                        <p class="text-gray-500 text-sm">При получении курьеру или в магазине. Только рубли.</p>
+                    </div>
+                    <!-- Карта при получении -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-credit-card text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Карта при получении</h3>
+                        <p class="text-gray-500 text-sm">Курьер или в магазине: Visa, MasterCard, МИР.</p>
+                    </div>
+                    <!-- Онлайн-оплата -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-globe text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Онлайн-оплата</h3>
+                        <p class="text-gray-500 text-sm">На сайте картой, Apple Pay, Google Pay, СБП. Моментальное подтверждение.</p>
+                    </div>
+                    <!-- Безналичный расчёт (для юрлиц) -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-file-invoice text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Безналичный расчёт</h3>
+                        <p class="text-gray-500 text-sm">Для организаций и ИП. Выставляем счёт, работаем с НДС и без.</p>
+                    </div>
+                </div>
+
+                <!-- Доп. информация об оплате -->
+                <div class="mt-10 bg-white p-6 rounded-xl border border-gray-200 max-w-3xl mx-auto">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-info-circle text-primary text-xl mt-1"></i>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Важно об оплате</h4>
+                            <p class="text-gray-600 text-sm">При онлайн-оплате заказ резервируется сразу. Если вы выбрали наложенный платёж (оплата при получении на почте), стоимость пересылки может включать комиссию за перевод. Для оптовых заказов действуют особые условия — свяжитесь с нами.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pickup details (more info) -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-10 items-center">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold font-heading mb-4">Пункт самовывоза</h2>
+                        <p class="text-gray-600 mb-4">Вы можете лично прийти и выбрать косметику в нашем магазине, а также забрать предварительно оформленный онлайн-заказ.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start"><i class="fas fa-map-pin text-primary mt-1 mr-3"></i> <span><strong>Адрес:</strong> г. Грозный, ул. Лорсанова, 1Б/1, РТЦ Беркат (возле Автостанции)</span></li>
+                            <li class="flex items-start"><i class="fas fa-clock text-primary mt-1 mr-3"></i> <span><strong>Часы работы:</strong> ежедневно с 9:00 до 21:00</span></li>
+                            <li class="flex items-start"><i class="fas fa-phone-alt text-primary mt-1 mr-3"></i> <span><strong>Телефон:</strong> <a href="tel:+79284793889" class="hover:text-primary">+7 (928) 479-38-89</a></span></li>
+                        </ul>
+                        <!-- Simple mini map link -->
+                        <a href="https://yandex.ru/maps/?text=Грозный,+ул.+Лорсанова,+1Б/1" target="_blank" class="inline-block mt-5 text-primary hover:underline"><i class="fas fa-external-link-alt mr-1"></i> Открыть карту</a>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0a?auto=format&fit=crop&w=800&q=80" alt="Магазин косметики" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ teaser / Additional questions -->
+        <section class="pb-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-2xl font-bold font-heading mb-4">Остались вопросы о доставке или оплате?</h2>
+                    <p class="text-gray-600 mb-6">Посмотрите раздел «Часто задаваемые вопросы» или свяжитесь с нами напрямую.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="/faq" class="bg-white border border-primary text-primary px-6 py-3 rounded-full font-medium hover:bg-primary/10 transition">Перейти в FAQ</a>
+                        <a href="/contact" class="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition">Связаться с нами</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

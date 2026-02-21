@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Бренды косметики | Оригинальная косметика в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .brand-card:hover .brand-logo {
+            transform: scale(1.05);
+            box-shadow: 0 20px 25px -5px rgba(225, 29, 140, 0.1), 0 10px 10px -5px rgba(225, 29, 140, 0.04);
+        }
+        .brand-logo {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== BRANDS PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Бренды</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page header -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Ведущие мировые бренды</h1>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">В нашем каталоге представлена только оригинальная косметика от известных производителей. Мы сотрудничаем напрямую с официальными дистрибьюторами, чтобы гарантировать качество.</p>
+            </div>
+        </section>
+
+        <!-- Alphabet quick filter (optional but nice) -->
+        <div class="container mx-auto px-4 mb-8">
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <span class="text-sm text-gray-500 mr-2">Бренды по алфавиту:</span>
+                <a href="#brand-A" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">A</a>
+                <a href="#brand-B" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">B</a>
+                <a href="#brand-C" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">C</a>
+                <a href="#brand-D" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">D</a>
+                <a href="#brand-E" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">E</a>
+                <a href="#brand-F" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">F</a>
+                <a href="#brand-G" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">G</a>
+                <a href="#brand-H" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">H</a>
+                <a href="#brand-I" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">I</a>
+                <a href="#brand-J" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">J</a>
+                <a href="#brand-K" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">K</a>
+                <a href="#brand-L" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">L</a>
+                <a href="#brand-M" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">M</a>
+                <a href="#brand-N" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">N</a>
+                <a href="#brand-O" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">O</a>
+                <a href="#brand-P" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">P</a>
+                <a href="#brand-Q" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">Q</a>
+                <a href="#brand-R" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">R</a>
+                <a href="#brand-S" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">S</a>
+                <a href="#brand-T" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">T</a>
+                <a href="#brand-U" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">U</a>
+                <a href="#brand-V" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">V</a>
+                <a href="#brand-W" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">W</a>
+                <a href="#brand-X" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">X</a>
+                <a href="#brand-Y" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">Y</a>
+                <a href="#brand-Z" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition text-sm font-medium">Z</a>
+            </div>
+        </div>
+
+        <!-- Brands grid section -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-4">
+                <!-- Search bar for brands (optional) -->
+                <div class="max-w-md mx-auto mb-10">
+                    <div class="relative">
+                        <input type="text" placeholder="Поиск бренда..." class="w-full border border-gray-200 rounded-full py-3 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-primary/30">
+                        <button class="absolute right-2 top-2 bg-primary text-white p-2 rounded-full w-10 h-10 flex items-center justify-center">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Grid of brands (6 columns on xl, 4 on lg, 3 on md, 2 on sm) -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
+                    <!-- Brand 1: Chanel -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/chanel.svg" alt="Chanel" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>CH</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Chanel</h3>
+                        <p class="text-xs text-gray-500 mt-1">34 товара</p>
+                        <a href="/catalog?brand=chanel" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 2: Dior -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/dior.svg" alt="Dior" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>DI</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Dior</h3>
+                        <p class="text-xs text-gray-500 mt-1">28 товаров</p>
+                        <a href="/catalog?brand=dior" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 3: L'Oreal -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/loreal.svg" alt="L'Oreal" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>L\O</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">L'Oreal</h3>
+                        <p class="text-xs text-gray-500 mt-1">67 товаров</p>
+                        <a href="/catalog?brand=loreal" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 4: Maybelline -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/maybelline.svg" alt="Maybelline" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>MB</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Maybelline</h3>
+                        <p class="text-xs text-gray-500 mt-1">52 товара</p>
+                        <a href="/catalog?brand=maybelline" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 5: Estée Lauder -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/estee-lauder.svg" alt="Estée Lauder" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>EL</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Estée Lauder</h3>
+                        <p class="text-xs text-gray-500 mt-1">19 товаров</p>
+                        <a href="/catalog?brand=estee-lauder" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 6: Nivea -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/nivea.svg" alt="Nivea" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>NI</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Nivea</h3>
+                        <p class="text-xs text-gray-500 mt-1">41 товар</p>
+                        <a href="/catalog?brand=nivea" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 7: Garnier -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/garnier.svg" alt="Garnier" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>GA</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Garnier</h3>
+                        <p class="text-xs text-gray-500 mt-1">36 товаров</p>
+                        <a href="/catalog?brand=garnier" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 8: L'Occitane -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/loccitane.svg" alt="L'Occitane" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>LO</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">L'Occitane</h3>
+                        <p class="text-xs text-gray-500 mt-1">22 товара</p>
+                        <a href="/catalog?brand=loccitane" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 9: Yves Saint Laurent -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/ysl.svg" alt="YSL" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>YS</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">YSL</h3>
+                        <p class="text-xs text-gray-500 mt-1">15 товаров</p>
+                        <a href="/catalog?brand=ysl" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 10: Lancôme -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/lancome.svg" alt="Lancôme" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>LA</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Lancôme</h3>
+                        <p class="text-xs text-gray-500 mt-1">26 товаров</p>
+                        <a href="/catalog?brand=lancome" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 11: Biotherm -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/biotherm.svg" alt="Biotherm" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>BI</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Biotherm</h3>
+                        <p class="text-xs text-gray-500 mt-1">12 товаров</p>
+                        <a href="/catalog?brand=biotherm" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 12: Vichy -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/vichy.svg" alt="Vichy" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>VI</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">Vichy</h3>
+                        <p class="text-xs text-gray-500 mt-1">18 товаров</p>
+                        <a href="/catalog?brand=vichy" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 13: La Roche-Posay -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/larocheposay.svg" alt="La Roche-Posay" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>LR</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">La Roche-Posay</h3>
+                        <p class="text-xs text-gray-500 mt-1">24 товара</p>
+                        <a href="/catalog?brand=larocheposay" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 14: MAC -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/mac.svg" alt="MAC" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>MAC</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">MAC</h3>
+                        <p class="text-xs text-gray-500 mt-1">31 товар</p>
+                        <a href="/catalog?brand=mac" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 15: NYX -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/nyx.svg" alt="NYX" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>NYX</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">NYX</h3>
+                        <p class="text-xs text-gray-500 mt-1">43 товара</p>
+                        <a href="/catalog?brand=nyx" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+
+                    <!-- Brand 16: The Ordinary -->
+                    <div class="brand-card bg-gray-50 rounded-xl p-4 text-center border border-gray-100 hover:border-primary/30 transition">
+                        <div class="brand-logo w-24 h-24 mx-auto mb-3 rounded-full bg-white shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="/assets/images/brands/theordinary.svg" alt="The Ordinary" class="max-w-full max-h-full" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'text-2xl font-bold text-gray-400\'>TO</span>'">
+                        </div>
+                        <h3 class="font-bold text-lg">The Ordinary</h3>
+                        <p class="text-xs text-gray-500 mt-1">14 товаров</p>
+                        <a href="/catalog?brand=theordinary" class="text-primary text-sm hover:underline mt-2 inline-block">Перейти</a>
+                    </div>
+                </div>
+
+                <!-- View all link / note -->
+                <div class="text-center mt-12">
+                    <p class="text-gray-500">И это далеко не полный список! Мы постоянно расширяем ассортимент.</p>
+                    <a href="/catalog" class="inline-block mt-4 bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition shadow">Смотреть все товары</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        (function() {
+            // Simple alphabetical filter scrolling (just smooth scroll to anchor)
+            document.querySelectorAll('[href^="#brand-"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const letter = link.getAttribute('href').substring(7); // get A, B, C...
+                    // In a real implementation you might filter the grid.
+                    // For now we just scroll to top and show a message.
+                    alert(`Функция фильтра по букве "${letter}" будет доступна в ближайшее время.`);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
