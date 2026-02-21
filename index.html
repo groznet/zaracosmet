@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA - Интернет магазин косметики</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="font-body text-dark bg_light">
+    <!-- Top bar loaded dynamically from components/topbar.html -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+
+    <!-- Header loaded dynamically from components/header.html -->
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- Hero Section loaded dynamically from components/hero.html -->
+    <section id="hero-section" class="hero-pattern py-16 md:py-24"></section>
+
+    <!-- Popular Categories Section loaded dynamically from components/popular-cats.html -->
+    <section id="popular-categories" class="py-16 bg-white"></section>
+
+    <!-- Featured Products loaded dynamically from components/featured-products.html -->
+    <section id="popular-products" class="py-16 bg-gray-50"></section>
+
+    <!-- Benefits Section loaded dynamically from components/benefits.html -->
+    <section id="benefits-section" class="py-16 bg-white"></section>
+
+    <!-- Testimonials loaded dynamically from components/testimonials.html -->
+    <section id="testimonials-section" class="testimonial-bg py-16"></section>
+
+    <!-- Newsletter loaded dynamically from components/newsletter.html -->
+    <section id="newsletter-section" class="newsletter-bg py-16 text-white"></section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

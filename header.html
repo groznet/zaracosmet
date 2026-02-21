@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA - Косметика и уход</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .header-gradient {
+            background: linear-gradient(135deg, #f9f0ff 0%, #fef6ff 100%);
+        }
+        .search-bar {
+            transition: all 0.3s ease;
+        }
+        .search-bar:focus-within {
+            box-shadow: 0 0 0 3px rgba(225, 29, 140, 0.2);
+        }
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e11d8c;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 1000px;
+        }
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e11d8c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-item {
+            display: block;
+            padding: 8px 20px;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+        .dropdown-item:hover {
+            background: #fce4f1;
+            color: #e11d8c;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 shadow-sm header-gradient">
+        <!-- Top Bar -->
+        <div class="bg-white border-b border-gray-100 py-2 hidden md:block">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-pink-500 mr-2"></i>
+                        <span class="text-sm">г. Грозный, ул. Лорсанова, 1Б/1</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone text-pink-500 mr-2"></i>
+                        <a href="tel:+79284793889" class="text-sm hover:text-pink-600">+7 (928) 479-38-89</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-pink-500 mr-2"></i>
+                        <span class="text-sm">Ежедневно 9:00 - 21:00</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm">Следите за нами:</span>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-3xl font-bold font-serif text-pink-600 flex items-center">
+                        <i class="fas fa-spa text-pink-500 mr-2"></i>
+                        ZARA
+                    </a>
+                    <span class="hidden md:block text-xs ml-2 bg-pink-100 text-pink-800 px-2 py-1 rounded">Косметика и уход</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-grow mx-8 max-w-2xl">
+                    <div class="relative w-full">
+                        <div class="search-bar flex border-2 border-pink-300 rounded-full overflow-hidden bg-white">
+                            <select class="bg-gray-100 text-gray-700 px-4 py-2 border-r border-gray-200 focus:outline-none appearance-none">
+                                <option>Все категории</option>
+                                <option>Уход за лицом</option>
+                                <option>Декоративная косметика</option>
+                                <option>Уход за волосами</option>
+                                <option>Парфюмерия</option>
+                                <option>Уход за телом</option>
+                                <option>Для мужчин</option>
+                            </select>
+                            <input type="text" placeholder="Поиск среди 1500+ товаров..." class="flex-grow px-4 py-2 focus:outline-none">
+                            <button class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 transition">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="absolute left-0 right-0 mt-1 text-xs text-gray-500 pl-4">
+                            Популярное: <a href="#" class="text-pink-600 hover:underline ml-2">Помады</a>, 
+                            <a href="#" class="text-pink-600 hover:underline ml-2">Кремы</a>, 
+                            <a href="#" class="text-pink-600 hover:underline ml-2">Духи</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Icons -->
+                <div class="flex items-center space-x-4 lg:space-x-6">
+                    <!-- Compare -->
+                    <div class="hidden md:block relative">
+                        <a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                            <span class="text-xs mt-1">Сравнить</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Wishlist -->
+                    <div class="relative">
+                        <a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center">
+                            <i class="fas fa-heart text-xl"></i>
+                            <span class="text-xs mt-1">Избранное</span>
+                            <span class="notification-badge">3</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Cart -->
+                    <div class="relative">
+                        <a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center">
+                            <i class="fas fa-shopping-cart text-xl"></i>
+                            <span class="text-xs mt-1">Корзина</span>
+                            <span class="notification-badge">2</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Account -->
+                    <div class="relative dropdown">
+                        <a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center">
+                            <i class="fas fa-user-circle text-xl"></i>
+                            <span class="text-xs mt-1">Войти</span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item"><i class="fas fa-sign-in-alt mr-2"></i> Войти</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-user-plus mr-2"></i> Регистрация</a>
+                            <div class="border-t my-2"></div>
+                            <a href="#" class="dropdown-item"><i class="fas fa-user mr-2"></i> Профиль</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-shopping-bag mr-2"></i> Мои заказы</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-heart mr-2"></i> Избранное</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="border-t border-gray-100 py-3 hidden md:block">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <!-- Main Navigation -->
+                    <div class="flex space-x-1">
+                        <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-home mr-2"></i> Главная
+                        </a>
+                        
+                        <!-- Catalog Dropdown -->
+                        <div class="dropdown">
+                            <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                                <i class="fas fa-store mr-2"></i> Каталог
+                                <i class="fas fa-chevron-down text-xs ml-2"></i>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-spa mr-2 text-pink-500"></i> Уход за лицом
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-lipstick mr-2 text-pink-500"></i> Декоративная косметика
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-air-freshener mr-2 text-pink-500"></i> Парфюмерия
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-pump-soap mr-2 text-pink-500"></i> Уход за телом
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-cut mr-2 text-pink-500"></i> Уход за волосами
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-male mr-2 text-blue-500"></i> Мужская косметика
+                                </a>
+                                <div class="border-t my-2"></div>
+                                <a href="#" class="dropdown-item font-medium text-pink-600">
+                                    <i class="fas fa-tags mr-2"></i> Все категории
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Brands Dropdown -->
+                        <div class="dropdown">
+                            <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                                <i class="fas fa-copyright mr-2"></i> Бренды
+                                <i class="fas fa-chevron-down text-xs ml-2"></i>
+                            </a>
+                            <div class="dropdown-content grid grid-cols-2 gap-2 p-4" style="width: 400px;">
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Chanel
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Dior
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> L'Oreal
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Maybelline
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Nivea
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Garnier
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> L'Occitane
+                                </a>
+                                <a href="#" class="dropdown-item flex items-center">
+                                    <img src="https://via.placeholder.com/24" class="mr-2"> Estée Lauder
+                                </a>
+                                <div class="col-span-2 text-center mt-2">
+                                    <a href="#" class="text-pink-600 text-sm font-medium hover:underline">Все бренды →</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-percent mr-2"></i> Акции
+                        </a>
+                        
+                        <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-newspaper mr-2"></i> Новинки
+                        </a>
+                        
+                        <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-gift mr-2"></i> Подарки
+                        </a>
+                        
+                        <a href="#" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-book-open mr-2"></i> Блог
+                        </a>
+                    </div>
+                    
+                    <!-- Additional Links -->
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-truck mr-2"></i> Доставка
+                        </a>
+                        <a href="#" class="text-pink-600 font-medium flex items-center">
+                            <i class="fas fa-headset mr-2"></i> Помощь
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Header -->
+        <div class="md:hidden border-t border-gray-100 py-3">
+            <div class="container mx-auto px-4">
+                <!-- Mobile Search Bar -->
+                <div class="flex mb-3">
+                    <div class="search-bar flex border-2 border-pink-300 rounded-full overflow-hidden bg-white w-full">
+                        <button class="bg-gray-100 text-gray-700 px-4 py-2">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input type="text" placeholder="Поиск..." class="flex-grow px-2 py-2 focus:outline-none">
+                    </div>
+                    <button class="ml-2 text-gray-700 w-10 h-10 flex items-center justify-center">
+                        <i class="fas fa-filter text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Navigation -->
+                <div class="flex justify-between items-center">
+                    <button class="text-gray-700 flex flex-col items-center">
+                        <i class="fas fa-th-large text-xl"></i>
+                        <span class="text-xs mt-1">Каталог</span>
+                    </button>
+                    
+                    <button class="text-gray-700 flex flex-col items-center relative">
+                        <i class="fas fa-percent text-xl"></i>
+                        <span class="text-xs mt-1">Акции</span>
+                        <span class="notification-badge bg-green-500">5</span>
+                    </button>
+                    
+                    <button class="text-gray-700 flex flex-col items-center">
+                        <i class="fas fa-gift text-xl"></i>
+                        <span class="text-xs mt-1">Подарки</span>
+                    </button>
+                    
+                    <button class="text-gray-700 flex flex-col items-center">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                        <span class="text-xs mt-1">Магазины</span>
+                    </button>
+                    
+                    <button class="text-gray-700 flex flex-col items-center">
+                        <i class="fas fa-user text-xl"></i>
+                        <span class="text-xs mt-1">Профиль</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Demo Content -->
+    <div class="container mx-auto px-4 py-12">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">ZARA - Интернет магазин косметики</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Это демонстрация шапки сайта. Остальная часть сайта будет здесь.
+            </p>
+            <div class="mt-8">
+                <button class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-medium transition shadow-lg">
+                    Перейти к покупкам
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+        
+        // Search bar focus effect
+        const searchInput = document.querySelector('.search-bar input');
+        const searchContainer = document.querySelector('.search-bar');
+        
+        if(searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchContainer.classList.add('shadow-lg');
+            });
+            
+            searchInput.addEventListener('blur', () => {
+                searchContainer.classList.remove('shadow-lg');
+            });
+        }
+    </script>
+</body>
+</html>

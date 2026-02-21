@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA — О компании | Интернет-магазин косметики в Грозном</title>
+    <meta name="description" content="ZARA — интернет-магазин оригинальной косметики в Грозном. Узнайте больше о нашей миссии, преимуществах, брендах и команде. Работаем с розницей и оптом.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        /* Дополнительные стили для страницы "О компании" */
+        .mission-quote {
+            border-left: 4px solid #e11d8c;
+            background: linear-gradient(to right, #fdf2f8, transparent);
+        }
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(225, 29, 140, 0.1), 0 10px 10px -5px rgba(225, 29, 140, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+    <!-- ========== TOPBAR (mobile only) ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-sm flex space-x-4">
+                <a href="#" class="hover:text-primary transition"><i class="fas fa-map-marker-alt mr-1"></i> Грозный, ул. Лорсанова, 1Б/1</a>
+                <a href="tel:+79284793889" class="hover:text-primary transition"><i class="fas fa-phone mr-1"></i> +7 (928) 479-38-89</a>
+            </div>
+            <div class="flex space-x-4 mt-2 md:mt-0">
+                <a href="https://wa.me/79284793889" class="text-green-600 hover:text-green-800 transition"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/zaracosmet" class="text-blue-500 hover:text-blue-700 transition"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/zara.beauty_shop" class="text-pink-500 hover:text-pink-700 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-blue-700 hover:text-blue-900 transition"><i class="fab fa-vk"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HEADER (полноценный, как на главной) ========== -->
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient">
+        <!-- Top Bar (десктопный) -->
+        <div class="bg-white border-b border-gray-100 py-2 hidden md:block">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt text-pink-500 mr-2"></i><span class="text-sm">г. Грозный, ул. Лорсанова, 1Б/1</span></div>
+                    <div class="flex items-center"><i class="fas fa-phone text-pink-500 mr-2"></i><a href="tel:+79284793889" class="text-sm hover:text-pink-600">+7 (928) 479-38-89</a></div>
+                    <div class="flex items-center"><i class="fas fa-clock text-pink-500 mr-2"></i><span class="text-sm">Ежедневно 9:00 - 21:00</span></div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm">Следите за нами:</span>
+                    <div class="flex space-x-3">
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-pink-500 transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header (лого, поиск, иконки) -->
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="text-3xl font-bold font-serif text-pink-600 flex items-center">
+                        <i class="fas fa-spa text-pink-500 mr-2"></i> ZARA
+                    </a>
+                    <span class="hidden md:block text-xs ml-2 bg-pink-100 text-pink-800 px-2 py-1 rounded">Косметика и уход</span>
+                </div>
+
+                <!-- Search Bar (десктоп) -->
+                <div class="hidden lg:flex flex-grow mx-8 max-w-2xl">
+                    <div class="relative w-full">
+                        <div class="search-bar flex border-2 border-pink-300 rounded-full overflow-hidden bg-white">
+                            <select class="bg-gray-100 text-gray-700 px-4 py-2 border-r border-gray-200 focus:outline-none appearance-none">
+                                <option>Все категории</option>
+                                <option>Уход за лицом</option>
+                                <option>Декоративная косметика</option>
+                                <option>Уход за волосами</option>
+                                <option>Парфюмерия</option>
+                                <option>Уход за телом</option>
+                                <option>Для мужчин</option>
+                            </select>
+                            <input type="text" placeholder="Поиск среди 1500+ товаров..." class="flex-grow px-4 py-2 focus:outline-none">
+                            <button class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 transition"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="absolute left-0 right-0 mt-1 text-xs text-gray-500 pl-4">Популярное: <a href="#" class="text-pink-600 hover:underline ml-2">Помады</a>, <a href="#" class="text-pink-600 hover:underline ml-2">Кремы</a>, <a href="#" class="text-pink-600 hover:underline ml-2">Духи</a></div>
+                    </div>
+                </div>
+
+                <!-- Action Icons -->
+                <div class="flex items-center space-x-4 lg:space-x-6">
+                    <div class="hidden md:block relative"><a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center"><i class="fas fa-balance-scale text-xl"></i><span class="text-xs mt-1">Сравнить</span></a></div>
+                    <div class="relative"><a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center"><i class="fas fa-heart text-xl"></i><span class="text-xs mt-1">Избранное</span><span class="notification-badge mr-2.5">3</span></a></div>
+                    <div class="relative"><a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center"><i class="fas fa-shopping-cart text-xl"></i><span class="text-xs mt-1">Корзина</span><span class="notification-badge">2</span></a></div>
+                    <div class="relative dropdown"><a href="#" class="text-gray-700 hover:text-pink-600 transition flex flex-col items-center"><i class="fas fa-user-circle text-xl"></i><span class="text-xs mt-1">Войти</span></a>
+                        <div class="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg z-50 dropdown-content">
+                            <a href="#" class="dropdown-item"><i class="fas fa-sign-in-alt mr-2"></i> Войти</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-user-plus mr-2"></i> Регистрация</a>
+                            <div class="border-t my-2"></div>
+                            <a href="#" class="dropdown-item"><i class="fas fa-user mr-2"></i> Профиль</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-shopping-bag mr-2"></i> Мои заказы</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-heart mr-2"></i> Избранное</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar (десктоп) с активной ссылкой "О компании" -->
+        <nav class="border-t border-gray-100 py-3 hidden md:block">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex space-x-1">
+                        <a href="/" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-home mr-2"></i>Главная</a>
+                        <!-- Каталог (мега-меню) -->
+                        <div class="dropdown">
+                            <a href="/catalog" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-store mr-2"></i> Каталог <i class="fas fa-chevron-down text-xs ml-2"></i></a>
+                            <div class="dropdown-content" style="width: 1280px; left: -100px; padding: 0;">
+                                <!-- Сокращённое содержимое мега-меню (аналогично главной) -->
+                                <div class="grid md:grid-cols-4 gap-0">
+                                    <div class="p-6 border-r border-gray-100"><h3 class="font-bold text-pink-600 mb-3"><i class="fas fa-spa mr-2"></i> Уход за лицом</h3><ul class="space-y-2"><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Очищение</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Тонизирование</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Увлажнение</a></li><li><a href="#" class="text-pink-600 text-sm font-medium mt-2 inline-block">Все для лица →</a></li></ul></div>
+                                    <div class="p-6 border-r border-gray-100"><h3 class="font-bold text-pink-600 mb-3"><i class="fas fa-lipstick mr-2"></i> Макияж</h3><ul class="space-y-2"><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Лицо</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Губы</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Глаза</a></li></ul></div>
+                                    <div class="p-6 border-r border-gray-100"><h3 class="font-bold text-pink-600 mb-3"><i class="fas fa-pump-soap mr-2"></i> Уход за телом</h3><ul class="space-y-2"><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Гели для душа</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Скрабы</a></li></ul></div>
+                                    <div class="p-6"><h3 class="font-bold text-pink-600 mb-3"><i class="fas fa-cut mr-2"></i> Волосы</h3><ul class="space-y-2"><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Шампуни</a></li><li><a href="#" class="text-gray-600 hover:text-pink-600 text-sm">Маски</a></li></ul></div>
+                                </div>
+                                <div class="bg-gray-50 px-6 py-3 border-t border-gray-100 flex justify-between items-center"><span class="text-sm text-gray-600"><i class="fas fa-truck text-pink-600 mr-1"></i> Бесплатная доставка от 3000₽</span><a href="/catalog" class="text-pink-600 font-medium text-sm hover:underline">Весь каталог →</a></div>
+                            </div>
+                        </div>
+                        <!-- Бренды (упрощённый дропдаун) -->
+                        <div class="dropdown">
+                            <a href="/brands" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-copyright mr-2"></i> Бренды <i class="fas fa-chevron-down text-xs ml-2"></i></a>
+                            <div class="dropdown-content grid grid-cols-2 gap-2 p-4" style="width: 400px;">
+                                <a href="#" class="dropdown-item flex items-center"><img src="/assets/images/brands/chanel.svg" class="w-12 mr-2"> Chanel</a>
+                                <a href="#" class="dropdown-item flex items-center"><img src="/assets/images/brands/dior.svg" class="w-12 mr-2"> Dior</a>
+                                <a href="#" class="dropdown-item flex items-center"><img src="/assets/images/brands/loreal.svg" class="w-12 mr-2"> L'Oreal</a>
+                                <div class="col-span-2 text-center mt-2"><a href="#" class="text-pink-600 text-sm font-medium hover:underline">Все бренды →</a></div>
+                            </div>
+                        </div>
+                        <a href="/promo" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-percent mr-2"></i> Акции</a>
+                        <a href="/new" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-newspaper mr-2"></i> Новинки</a>
+                        <a href="/blog" class="nav-link px-4 py-2 text-gray-700 hover:text-pink-600 font-medium flex items-center"><i class="fas fa-book-open mr-2"></i> Блог</a>
+                        <a href="/about" class="nav-link px-4 py-2 text-pink-600 font-medium flex items-center"><i class="fas fa-info-circle mr-2"></i> О компании</a>
+                    </div>
+                    <div class="flex items-center space-x-4"><a href="/delivery" class="text-pink-600 font-medium flex items-center"><i class="fas fa-truck mr-2"></i> Доставка</a><a href="/contact" class="text-pink-600 font-medium flex items-center"><i class="fas fa-headset mr-2"></i> Помощь</a></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Header (упрощённо, как на главной) -->
+        <div class="md:hidden border-t border-gray-100 py-3">
+            <div class="container mx-auto px-4">
+                <div class="flex mb-3"><div class="search-bar flex border-2 border-pink-300 rounded-full overflow-hidden bg-white w-full"><button class="bg-gray-100 text-gray-700 px-4 py-2"><i class="fas fa-search"></i></button><input type="text" placeholder="Поиск..." class="flex-grow px-2 py-2 focus:outline-none"></div><button class="ml-2 text-gray-700 w-10 h-10 flex items-center justify-center"><i class="fas fa-filter text-xl"></i></button></div>
+                <div class="flex justify-between items-center">
+                    <button id="mobile-catalog" class="text-gray-700 flex flex-col items-center"><i class="fas fa-th-large text-xl"></i><span class="text-xs mt-1">Каталог</span></button>
+                    <button class="text-gray-700 flex flex-col items-center relative"><i class="fas fa-percent text-xl"></i><span class="text-xs mt-1">Акции</span><span class="notification-badge bg-green-500">5</span></button>
+                    <button class="text-gray-700 flex flex-col items-center"><i class="fas fa-gift text-xl"></i><span class="text-xs mt-1">Подарки</span></button>
+                    <button class="text-gray-700 flex flex-col items-center"><i class="fas fa-map-marker-alt text-xl"></i><span class="text-xs mt-1">Магазины</span></button>
+                    <button class="text-gray-700 flex flex-col items-center"><i class="fas fa-user text-xl"></i><span class="text-xs mt-1">Профиль</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ "О КОМПАНИИ" ========== -->
+    <!-- Герой-секция "О нас" -->
+    <section class="relative bg-gradient-to-r from-pink-50 to-purple-50 py-20 md:py-28">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6">
+                <span class="block text-primary">О компании</span>
+                <span class="block text-secondary text-2xl md:text-3xl mt-2">ZARA – ваш проводник в мире красоты</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Мы объединили лучшие мировые бренды и доступные цены, чтобы каждая женщина (и мужчина) в Грозном и по всей России могла радовать себя качественной косметикой.
+            </p>
+        </div>
+    </section>
+
+    <!-- Миссия и ценности -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-center mb-20">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold font-heading text-primary mb-6">Наша миссия</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Мы делаем уход за собой доступным и вдохновляющим. ZARA — это не просто магазин, а место, где рождается уверенность в своей красоте. Мы тщательно отбираем продукты, чтобы вы получали только оригинальную, безопасную и эффективную косметику.
+                    </p>
+                    <div class="mission-quote pl-6 py-4 italic text-gray-600 text-lg">
+                        «Красота требует не жертв, а правильного выбора. Мы помогаем делать этот выбор легким и приятным».
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1571781418606-70265b9cce90?auto=format&fit=crop&w=600" alt="Косметика ZARA" class="rounded-xl shadow-xl object-cover w-full max-w-md lg:max-w-full">
+                </div>
+            </div>
+
+            <!-- Ценности (4 колонки) -->
+            <h3 class="text-2xl md:text-3xl font-heading font-bold text-center mb-12">Наши ценности</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="value-card bg-light p-6 rounded-xl text-center transition duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-certificate text-primary text-2xl"></i></div>
+                    <h4 class="font-bold text-lg mb-2">100% оригинал</h4>
+                    <p class="text-gray-600">Сотрудничаем только с официальными дистрибьюторами и имеем сертификаты.</p>
+                </div>
+                <div class="value-card bg-light p-6 rounded-xl text-center transition duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-hand-holding-heart text-primary text-2xl"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Забота о клиенте</h4>
+                    <p class="text-gray-600">Индивидуальный подход, помощь в выборе, поддержка 24/7.</p>
+                </div>
+                <div class="value-card bg-light p-6 rounded-xl text-center transition duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-tags text-primary text-2xl"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Честные цены</h4>
+                    <p class="text-gray-600">Гибкие условия для розничных и оптовых покупателей, скидки и акции.</p>
+                </div>
+                <div class="value-card bg-light p-6 rounded-xl text-center transition duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-rocket text-primary text-2xl"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Быстрое развитие</h4>
+                    <p class="text-gray-600">Мы постоянно расширяем ассортимент и улучшаем сервис.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цифры и факты (stats) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">5+</div>
+                    <p class="text-gray-600">лет на рынке</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">1500+</div>
+                    <p class="text-gray-600">товаров в каталоге</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">200+</div>
+                    <p class="text-gray-600">довольных оптовиков</p>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
+                    <p class="text-gray-600">брендов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Почему выбирают нас" (преимущества) -->
+    <section id="benfits" class="py-20 bg-white"></section>
+
+    <!-- Наши бренды (кратко) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Нам доверяют мировые бренды</h2>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <span class="text-2xl font-serif text-gray-400">Chanel</span>
+                <span class="text-2xl font-serif text-gray-400">Dior</span>
+                <span class="text-2xl font-serif text-gray-400">L'Oreal</span>
+                <span class="text-2xl font-serif text-gray-400">Maybelline</span>
+                <span class="text-2xl font-serif text-gray-400">Estée Lauder</span>
+                <span class="text-2xl font-serif text-gray-400">Nivea</span>
+                <span class="text-2xl font-serif text-gray-400">Garnier</span>
+            </div>
+            <div class="text-center mt-12"><a href="/brands" class="text-primary font-medium hover:underline">Посмотреть все бренды →</a></div>
+        </div>
+    </section>
+
+    <!-- Контакты и схема проезда (кратко) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-heading font-bold text-primary mb-6">Приезжайте в гости</h2>
+                    <p class="text-gray-700 mb-6">Мы находимся в самом центре Грозного. Здесь вы можете забрать заказ, проконсультироваться с нашими специалистами и познакомиться с новинками лично.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><i class="fas fa-map-pin text-primary mt-1 mr-4"></i><span><strong>Адрес:</strong> г. Грозный, ул. Лорсанова, 1Б/1, РТЦ Беркат (возле Автостанции)</span></li>
+                        <li class="flex items-start"><i class="fas fa-clock text-primary mt-1 mr-4"></i><span><strong>Режим работы:</strong> ежедневно 9:00 – 21:00</span></li>
+                        <li class="flex items-start"><i class="fas fa-phone-alt text-primary mt-1 mr-4"></i><span><strong>Телефон:</strong> <a href="tel:+79284793889" class="hover:underline">+7 (928) 479-38-89</a></span></li>
+                        <li class="flex items-start"><i class="fas fa-envelope text-primary mt-1 mr-4"></i><span><strong>Email:</strong> <a href="mailto:info@zaracosmet.ru" class="hover:underline">info@zaracosmet.ru</a></span></li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 w-full h-80 bg-gray-200 rounded-xl overflow-hidden shadow-md">
+                    <!-- имитация карты (iframe или картинка) -->
+                    <iframe class="w-full h-full" src="https://yandex.ru/map-widget/v1/?um=constructor%3A3b2d5c1a2c1cd4d8b1f9b5f7c5e0b2e6d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b&source=constructor" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER (компонент, как на главной) ========== -->
+    <section id="newsletter-section" class="newsletter-bg py-16 text-white"></section>
+
+    <!-- ========== FOOTER (полностью скопирован с главной) ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <!-- небольшой скрипт для мобильного аккордеона если нужно (скопирован из главной) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const catalogBtn = document.querySelector('#mobile-catalog');
+            const mobileCatalog = document.querySelector('.mobile-catalog');
+            if(catalogBtn && mobileCatalog) {
+                catalogBtn.addEventListener('click', function() { mobileCatalog.classList.toggle('hidden'); });
+            }
+            document.querySelectorAll('.mobile-catalog button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    if(content) {
+                        content.classList.toggle('hidden');
+                        icon?.classList.toggle('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

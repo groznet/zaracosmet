@@ -1,0 +1,106 @@
+* {
+    /* outline: 1px solid red; */
+}
+/* Header*/
+.header-gradient {
+    background: linear-gradient(135deg, #f9f0ff 0%, #fef6ff 100%);
+}
+.search-bar {
+    transition: all 0.3s ease;
+}
+.search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(225, 29, 140, 0.2);
+}
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #e11d8c;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.mobile-menu.open {
+    max-height: 1000px;
+}
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e11d8c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    /* left: 0; */
+    width: 220px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 15px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-item {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+.dropdown-item:hover {
+    background: #fce4f1;
+    color: #e11d8c;
+    padding-left: 25px;
+}
+/* End: Header*/
+
+
+.hero-pattern {
+    background: radial-gradient(circle, rgba(225,29,140,0.1) 0%, rgba(255,255,255,1) 70%);
+}
+.category-card:hover .category-img {
+    transform: scale(1.05);
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.newsletter-bg {
+    background: linear-gradient(90deg, rgba(225,29,140,0.8) 0%, rgba(90,24,154,0.8) 100%), url('https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=1920') center/cover;
+}
+.testimonial-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.95) 100%), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920') center/cover;
+}
