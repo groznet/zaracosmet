@@ -4,13 +4,21 @@
         <p class="text-white/90 mb-8">Узнавайте первыми о новинках, специальных предложениях и скидках до 50%</p>
         
         <form class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-            <input disabled type="email" placeholder="Ваш e-mail" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800">
-            <button disabled type="submit" class="bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Подписаться</button>
+            <input disabled type="email" placeholder="Ваш e-mail" class="flex-grow px-4 py-3 rounded-lg focus:outline-none text-gray-800 disabled:bg-gray-100 disabled:cursor-not-allowed">
+            <button disabled type="submit" class="bg-gray-400 text-white font-bold px-6 py-3 rounded-lg cursor-not-allowed transition">Подписаться</button>
         </form>
         
         <p class="text-white/70 text-sm mt-4">
             Нажимая "Подписаться", вы соглашаетесь с нашей 
             <a href="/privacy" class="underline hover:text-white">Политикой конфиденциальности</a>
         </p>
+
+        <!-- Уведомление об отключении формы -->
+        <div class="mt-6 p-4 bg-amber-500/10 border border-amber-500/30 text-white/90 rounded-lg text-sm flex items-start space-x-3 text-left max-w-2xl mx-auto">
+            <i class="fas fa-info-circle text-amber-400 text-lg mt-0.5 flex-shrink-0"></i>
+            <p>
+                <strong class="text-white">Обратите внимание:</strong> Форма подписки временно отключена, не обрабатывает и не собирает персональные данные в связи с требованиями Федерального закона «О персональных данных» № 152-ФЗ.
+            </p>
+        </div>
     </div>
 </div>

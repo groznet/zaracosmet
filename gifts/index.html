@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Подарки и наборы | Идеи для подарков в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== GIFTS PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Подарки</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Banner -->
+        <section class="relative overflow-hidden bg-gradient-to-r from-pink-100 to-purple-100">
+            <div class="container mx-auto px-4 py-16 md:py-20">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <span class="inline-block bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">🎁 Подарочные наборы</span>
+                        <h1 class="text-4xl md:text-5xl font-bold font-heading mb-4">Идеальные подарки <br><span class="text-primary">для близких</span></h1>
+                        <p class="text-gray-700 text-lg mb-6">Красивые наборы косметики и парфюмерии, упакованные с любовью. Выберите подарок для любого повода.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#gift-grid" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition shadow">Смотреть наборы</a>
+                            <a href="/catalog" class="bg-white border border-primary text-primary px-8 py-3 rounded-full font-medium hover:bg-primary/10 transition">Весь каталог</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8cae0f2b4a?auto=format&fit=crop&w=600" alt="Подарочные наборы" class="rounded-2xl shadow-xl max-w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift categories (quick filters) -->
+        <section class="py-8 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <span class="text-sm text-gray-500 mr-2">По получателю:</span>
+                    <a href="#" class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">Все</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Для неё</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Для него</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Уход за лицом</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Парфюмерия</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Наборы для ванны</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift grid -->
+        <section id="gift-grid" class="py-14 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold font-heading">Подарочные наборы</h2>
+                    <span class="text-gray-500 text-sm">Найдено 15 наборов</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Gift 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500" alt="Набор для ухода" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                            <div class="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">Хит</div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор для ухода за лицом «Сияние»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">3 990 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Крем, сыворотка, маска, тоник</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500" alt="Парфюмерный набор" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                            <div class="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">NEW</div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор мини-парфюмов Chanel</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">5 490 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">5 ароматов по 7 мл</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1595425977377-6a1ddffbb028?auto=format&fit=crop&w=500" alt="Набор для ванны" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор для ванны и тела «Релакс»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">1 890 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Соль, пена, масло, скраб</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500" alt="Набор для макияжа" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор для макияжа «Full Face»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">4 290 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Тональный, помада, тени, тушь</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 5 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1611930022073-338e644f0d6e?auto=format&fit=crop&w=500" alt="Мужской набор" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Мужской набор «Gentleman»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">2 990 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Гель, лосьон, парфюм, крем</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 6 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=500" alt="Набор для волос" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор для волос «Кератин»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">1 590 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Шампунь, маска, масло</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 7 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=500" alt="Набор для губ" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Набор помад и блесков «Nude»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">2 190 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">5 оттенков</p>
+                        </div>
+                    </div>
+
+                    <!-- Gift 8 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500" alt="Анти-возраст набор" class="w-full h-56 object-cover">
+                            <div class="absolute top-2 right-2">
+                                <button class="bg-white rounded-full p-2 shadow hover:bg-primary hover:text-white transition"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-gray-500 text-xs">Набор</span>
+                            <h3 class="font-medium text-sm mt-1 h-12 overflow-hidden">Антивозрастной набор «Lift & Firm»</h3>
+                            <div class="flex text-yellow-400 text-xs my-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex justify-between items-center mt-2">
+                                <span class="font-bold text-lg">6 490 ₽</span>
+                                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-lg transition"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Крем, сыворотка, патчи</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination (same as catalog) -->
+                <div class="flex justify-center mt-12">
+                    <nav class="flex items-center gap-1">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white">1</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">2</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 hover:bg-primary/10 transition">3</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg border border-gray-200 text-gray-500 hover:bg-primary hover:text-white transition"><i class="fas fa-chevron-right"></i></a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift wrapping service / info -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-8 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-gift text-primary text-4xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold font-heading mb-2">Подарочная упаковка и открытка</h3>
+                        <p class="text-gray-600">Мы красиво упакуем любой набор и добавим поздравительную открытку с вашим текстом. Просто укажите это в комментарии к заказу.</p>
+                    </div>
+                    <a href="/contact" class="ml-auto bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition whitespace-nowrap">Заказать упаковку</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift ideas by price -->
+        <section class="py-14 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold font-heading text-center mb-10">Подарки на любой бюджет</h2>
+                <div class="grid sm:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl text-center">
+                        <span class="text-3xl block mb-3">💝</span>
+                        <h4 class="font-bold text-lg mb-2">До 1500 ₽</h4>
+                        <p class="text-gray-500 text-sm">Мини-наборы, блески, мыло ручной работы</p>
+                        <a href="#" class="text-primary text-sm font-medium hover:underline mt-3 inline-block">Смотреть →</a>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl text-center border-2 border-primary/20">
+                        <span class="text-3xl block mb-3">🎁</span>
+                        <h4 class="font-bold text-lg mb-2">1500 – 5000 ₽</h4>
+                        <p class="text-gray-500 text-sm">Наборы ухода, парфюм, косметика премиум</p>
+                        <a href="#" class="text-primary text-sm font-medium hover:underline mt-3 inline-block">Смотреть →</a>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl text-center">
+                        <span class="text-3xl block mb-3">💎</span>
+                        <h4 class="font-bold text-lg mb-2">От 5000 ₽</h4>
+                        <p class="text-gray-500 text-sm">Люксовые наборы, нишевая парфюмерия, подарочные сертификаты</p>
+                        <a href="#" class="text-primary text-sm font-medium hover:underline mt-3 inline-block">Смотреть →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

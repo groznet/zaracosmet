@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZARA – Каталог косметики | Интернет магазин в Грозном</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/localTailwind.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
@@ -71,14 +71,27 @@
             <div class="container mx-auto px-4">
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- FILTER SIDEBAR -->
-                    <aside class="lg:w-1/4 xl:w-1/5">
-                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto filter-scroll">
+                    
+                    <button id="open-filters" class="lg:hidden flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm mb-4">
+                        <i class="fas fa-sliders-h"></i> Фильтры
+                    </button>
+
+                    <div id="filter-backdrop" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+                    <aside id="filter-sidebar" class="fixed inset-y-0 left-0 z-50 w-80 max-w-[85vw] bg-white h-full transform -translate-x-full transition-transform duration-300 lg:transition-none lg:transform-none lg:static lg:w-1/4 xl:w-1/5 lg:h-auto lg:bg-transparent lg:z-auto hidden lg:block">
+                        
+                        <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 sticky top-28 max-h-screen overflow-y-auto lg:max-h-[calc(100vh-8rem)] filter-scroll h-full lg:h-auto">
+                            
                             <div class="flex justify-between items-center mb-4">
                                 <h2 class="font-bold text-lg">Фильтры</h2>
-                                <button class="text-sm text-primary hover:underline">Сбросить</button>
+                                <div class="flex items-center gap-3">
+                                    <button class="text-sm text-primary hover:underline">Сбросить</button>
+                                    <button id="close-filters" class="lg:hidden text-gray-500 hover:text-black text-xl">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
                             </div>
 
-                            <!-- Категории -->
                             <div class="mb-6">
                                 <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-tags text-primary mr-2 text-sm"></i> Категории</h3>
                                 <ul class="space-y-2 text-sm">
@@ -91,7 +104,6 @@
                                 </ul>
                             </div>
 
-                            <!-- Цена -->
                             <div class="mb-6">
                                 <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-ruble-sign text-primary mr-2 text-sm"></i> Цена</h3>
                                 <div class="flex gap-2 items-center">
@@ -102,7 +114,6 @@
                                 <button class="w-full mt-2 bg-primary/10 text-primary py-2 rounded-lg text-sm hover:bg-primary/20 transition">Применить</button>
                             </div>
 
-                            <!-- Бренды -->
                             <div class="mb-6">
                                 <h3 class="font-semibold mb-2 flex items-center"><i class="fas fa-copyright text-primary mr-2 text-sm"></i> Бренды</h3>
                                 <div class="space-y-2 max-h-40 overflow-y-auto pr-1 text-sm">
@@ -116,14 +127,12 @@
                                 </div>
                             </div>
 
-                            <!-- Наличие -->
                             <div class="mb-6">
                                 <h3 class="font-semibold mb-2">Наличие</h3>
                                 <label class="flex items-center text-sm"><input type="radio" name="stock" class="mr-2 text-primary"> В наличии</label>
                                 <label class="flex items-center text-sm"><input type="radio" name="stock" class="mr-2 text-primary"> Под заказ</label>
                             </div>
 
-                            <!-- Рейтинг -->
                             <div class="mb-6">
                                 <h3 class="font-semibold mb-2">Рейтинг</h3>
                                 <div class="flex items-center gap-1 text-yellow-400">

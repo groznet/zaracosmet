@@ -53,3 +53,26 @@ fetch('/components/footer.html')
     .then(data => {
         document.getElementById('footer').innerHTML = data;
     });
+
+
+// Sidebar toggle on mobile
+
+const openBtn = document.getElementById('open-filters');
+const closeBtn = document.getElementById('close-filters');
+const sidebar = document.getElementById('filter-sidebar');
+const backdrop = document.getElementById('filter-backdrop');
+
+function toggleSidebar() {
+    sidebar.classList.toggle('hidden');
+    backdrop.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+    
+    // Tiny timeout to let the hidden class trigger layout before sliding in
+    setTimeout(() => {
+        sidebar.classList.toggle('-translate-x-full');
+    }, 10);
+}
+
+openBtn.addEventListener('click', toggleSidebar);
+closeBtn.addEventListener('click', toggleSidebar);
+backdrop.addEventListener('click', toggleSidebar);

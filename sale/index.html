@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZARA – Акции и скидки | Интернет магазин косметики в Грозном</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d8c',
+                        secondary: '#5a189a',
+                        accent: '#ff6b6b',
+                        light: '#f8f9fa',
+                        bg_light: '#f8f9fa',
+                        dark: '#212529'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .sale-badge {
+            background: linear-gradient(135deg, #e11d8c, #ff6b6b);
+        }
+        .countdown-box {
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+        }
+        .promo-card:hover .promo-img {
+            transform: scale(1.04);
+        }
+        .promo-img {
+            transition: transform 0.4s ease;
+        }
+        .offer-tag {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg_light">
+
+    <!-- ========== LOADED COMPONENTS ========== -->
+    <div id="topbar-section" class="md:hidden bg-white py-2 border-b"></div>
+    <header id="header-section" class="sticky top-0 z-50 shadow-sm header-gradient"></header>
+
+    <!-- ========== SALES PAGE CONTENT ========== -->
+    <main>
+        <!-- Breadcrumbs -->
+        <div class="bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex items-center text-sm text-gray-500">
+                    <a href="/" class="hover:text-primary transition">Главная</a>
+                    <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                    <span class="text-primary font-medium">Акции</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero / Main promo banner -->
+        <section class="relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80"></div>
+            <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;"></div>
+            <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+                <div class="max-w-2xl">
+                    <span class="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium mb-4">🔥 Горячее предложение</span>
+                    <h1 class="text-4xl md:text-6xl font-bold font-heading text-white mb-4">Скидки до <span class="text-yellow-300">50%</span></h1>
+                    <p class="text-white/90 text-lg md:text-xl mb-6">На косметику ведущих брендов. Успейте купить по выгодной цене!</p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="#promotions" class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition shadow-lg">Смотреть все акции</a>
+                        <span class="text-white/80 text-sm flex items-center"><i class="fas fa-clock mr-2"></i> Предложение ограничено</span>
+                    </div>
+                    <!-- Countdown timer -->
+                    <div class="mt-8 flex gap-4 text-white">
+                        <div class="text-center">
+                            <div class="countdown-box px-4 py-2 rounded-lg min-w-[60px]">
+                                <span class="text-2xl font-bold" id="days">12</span>
+                                <span class="text-xs block">дней</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-box px-4 py-2 rounded-lg min-w-[60px]">
+                                <span class="text-2xl font-bold" id="hours">08</span>
+                                <span class="text-xs block">часов</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-box px-4 py-2 rounded-lg min-w-[60px]">
+                                <span class="text-2xl font-bold" id="minutes">45</span>
+                                <span class="text-xs block">минут</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="countdown-box px-4 py-2 rounded-lg min-w-[60px]">
+                                <span class="text-2xl font-bold" id="seconds">32</span>
+                                <span class="text-xs block">секунд</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotions categories / filters -->
+        <section class="py-8 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <span class="text-sm text-gray-500 mr-2">Все акции:</span>
+                    <a href="/sale" class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium">Все</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Скидки</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Подарочные наборы</a>
+                    <a href="#" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Бесплатная доставка</a>
+                    <a href="/about/" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition">Новинки со скидкой</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotions grid -->
+        <section id="promotions" class="py-14 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Актуальные акции</h2>
+                <p class="text-gray-600 mb-10">Выбирайте лучшие предложения и экономьте на любимой косметике</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Promo 1: Large discount -->
+                    <div class="promo-card bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600" alt="Скидка 30%" class="promo-img w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 sale-badge text-white text-xs font-bold px-3 py-1 rounded-full">-30%</div>
+                            <div class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full animate-pulse">🔥 Хит</div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gray-400">Скидка</span>
+                            <h3 class="text-xl font-bold font-heading mb-2">Уход за лицом со скидкой 30%</h3>
+                            <p class="text-gray-600 text-sm mb-3">Сыворотки, кремы, маски и тонеры от L'Oreal, Estée Lauder, Vichy.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xs text-gray-400 line-through">от 3 990 ₽</span>
+                                    <span class="text-xl font-bold text-primary block">от 2 790 ₽</span>
+                                </div>
+                                <a href="/catalog?promo=face-care" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary/90 transition">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 2: Gift set -->
+                    <div class="promo-card bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600" alt="Подарочные наборы" class="promo-img w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 sale-badge text-white text-xs font-bold px-3 py-1 rounded-full">Подарок</div>
+                            <div class="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">🎁</div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gray-400">Подарочные наборы</span>
+                            <h3 class="text-xl font-bold font-heading mb-2">Наборы косметики по цене одного</h3>
+                            <p class="text-gray-600 text-sm mb-3">Соберите идеальный набор для себя или в подарок. Экономия до 40%.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-primary">от 1 990 ₽</span>
+                                <a href="/catalog?promo=gift-sets" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary/90 transition">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 3: Free delivery -->
+                    <div class="promo-card bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600" alt="Бесплатная доставка" class="promo-img w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">🚚</div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gray-400">Доставка</span>
+                            <h3 class="text-xl font-bold font-heading mb-2">Бесплатная доставка по Грозному</h3>
+                            <p class="text-gray-600 text-sm mb-3">При заказе от 1500 ₽ доставка курьером по Грозному — абсолютно бесплатно!</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-primary">от 1 500 ₽</span>
+                                <a href="/delivery" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary/90 transition">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 4: Perfume sale -->
+                    <div class="promo-card bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1595425977377-6a1ddffbb028?auto=format&fit=crop&w=600" alt="Парфюмерия" class="promo-img w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 sale-badge text-white text-xs font-bold px-3 py-1 rounded-full">-20%</div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gray-400">Скидка</span>
+                            <h3 class="text-xl font-bold font-heading mb-2">Парфюмерия Chanel, Dior, YSL</h3>
+                            <p class="text-gray-600 text-sm mb-3">Скидка 20% на избранные ароматы. Идеальный момент для покупки.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-xs text-gray-400 line-through">от 8 990 ₽</span>
+                                    <span class="text-xl font-bold text-primary block">от 7 190 ₽</span>
+                                </div>
+                                <a href="/catalog?promo=perfume" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary/90 transition">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 5: Wholesale -->
+                    <div class="promo-card bg-gradient-to-r from-secondary/5 to-primary/5 rounded-xl overflow-hidden border border-primary/20 hover:shadow-lg transition">
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-3xl">🏷️</span>
+                                <span class="text-xs bg-secondary text-white px-3 py-1 rounded-full">Опт</span>
+                            </div>
+                            <h3 class="text-xl font-bold font-heading mb-2">Специальные условия для оптовых клиентов</h3>
+                            <p class="text-gray-600 text-sm mb-3">При заказе от 50 000 ₽ — индивидуальные скидки и отсрочка платежа. Свяжитесь с нами!</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500">Скидка до 30%</span>
+                                <a href="/contact" class="bg-secondary text-white px-4 py-2 rounded-lg text-sm hover:bg-secondary/90 transition">Узнать условия</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo 6: New arrivals -->
+                    <div class="promo-card bg-gray-50 rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600" alt="Новинки" class="promo-img w-full h-full object-cover">
+                            <div class="absolute top-3 left-3 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">NEW</div>
+                            <div class="absolute top-3 right-3 sale-badge text-white text-xs font-bold px-3 py-1 rounded-full">-15%</div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-gray-400">Новинки</span>
+                            <h3 class="text-xl font-bold font-heading mb-2">Свежие поступления весны 2025</h3>
+                            <p class="text-gray-600 text-sm mb-3">Новые коллекции скидка 15% в течение первой недели после поступления.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-xl font-bold text-primary">от 890 ₽</span>
+                                <a href="/catalog?promo=new" class="bg-primary text-white px-4 py-2 rounded-lg text-sm hover:bg-primary/90 transition">Смотреть</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sale banner / flash sale -->
+        <section class="py-12 bg-gradient-to-r from-primary to-secondary">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+                    <div>
+                        <span class="offer-tag inline-block bg-white/20 px-4 py-1 rounded-full text-sm font-medium mb-2">⚡ Молния-распродажа</span>
+                        <h2 class="text-3xl md:text-4xl font-bold font-heading">Скидка 40% на косметику до 12:00</h2>
+                        <p class="text-white/80 text-lg">Успейте купить товары из категории «Уход за телом» с максимальной скидкой.</p>
+                    </div>
+                    <a href="/catalog/body" class="bg-white text-primary font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition shadow-lg whitespace-nowrap">Перейти к покупкам</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo tips / why buy from us -->
+        <section class="py-14 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold font-heading text-center mb-4">Почему выгодно покупать у нас</h2>
+                <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Акции и скидки — это ещё не всё. Мы гарантируем качество и сервис.</p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-check-circle text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">100% оригинал</h4>
+                        <p class="text-gray-500 text-sm">Сертифицированная продукция от официальных поставщиков</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-gift text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Подарки к заказу</h4>
+                        <p class="text-gray-500 text-sm">Бонусные пробники и мини-версии для постоянных клиентов</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-truck text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Быстрая доставка</h4>
+                        <p class="text-gray-500 text-sm">По Грозному — 2 часа, по России — от 1 дня</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-percent text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Накопительные скидки</h4>
+                        <p class="text-gray-500 text-sm">До 15% постоянным покупателям</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter subscribe for sale notifications -->
+        <section class="py-14 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold font-heading mb-4">Хотите быть в курсе акций?</h2>
+                    <p class="text-gray-600 mb-6">Подпишитесь на рассылку и получайте уведомления о новых скидках и специальных предложениях первыми.</p>
+                    <form class="flex flex-col gap-4 max-w-lg mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input disabled type="email" placeholder="Ваш e-mail" class="flex-grow px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-100 disabled:cursor-not-allowed text-gray-800">
+                            <button disabled class="bg-gray-400 text-white px-6 py-3 rounded-lg font-medium cursor-not-allowed transition">Подписаться</button>
+                        </div>
+
+                        <!-- Уведомление об отключении формы -->
+                        <div class="p-3 bg-amber-50 border-l-4 border-amber-500 text-amber-900 rounded-r-lg text-xs flex items-start space-x-2 text-left">
+                            <i class="fas fa-info-circle text-amber-500 mt-0.5 flex-shrink-0"></i>
+                            <p>
+                                <strong>Обратите внимание:</strong> Форма подписки временно отключена, не обрабатывает и не собирает персональные данные в связи с требованиями Федерального закона «О персональных данных» № 152-ФЗ.
+                            </p>
+                        </div>
+                    </form>
+                    <p class="text-xs text-gray-400 mt-3">Нажимая «Подписаться», вы соглашаетесь с политикой конфиденциальности.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="bg-dark text-white pt-16 pb-8"></footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/79284793889" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="/assets/js/main.js"></script>
+    <script>
+        // Simple countdown timer (demo)
+        (function() {
+            let totalSeconds = 12 * 86400 + 8 * 3600 + 45 * 60 + 32;
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            function updateTimer() {
+                if (totalSeconds <= 0) return;
+                totalSeconds--;
+                const d = Math.floor(totalSeconds / 86400);
+                const h = Math.floor((totalSeconds % 86400) / 3600);
+                const m = Math.floor((totalSeconds % 3600) / 60);
+                const s = totalSeconds % 60;
+                if (daysEl) daysEl.textContent = d;
+                if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(m).padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = String(s).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        })();
+    </script>
+</body>
+</html>
